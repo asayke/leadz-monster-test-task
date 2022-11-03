@@ -2,11 +2,20 @@
 using UnityEngine;
 
 [RequireComponent(typeof(FillObstaclesPool))]
+[RequireComponent(typeof(ObstaclesSpawner))]
 public class ObstaclesPool : MonoBehaviour
 {
-    private readonly Stack<GameObject> _pool = new Stack<GameObject>();
+    private Stack<GameObject> _pool = new Stack<GameObject>();
 
-    public void PushToPool(GameObject obstacle) => _pool.Push(obstacle);
+    public void PushToPool(GameObject obstacle)
+    {
+        _pool.Push(obstacle);
+        obstacle.SetActive(false);
+    }
 
-    public void GetFromPool() => _pool.Pop();
+    public void GetFromPool()
+    {
+        var obstacle = _pool.Pop();
+        obstacle.SetActive(true);
+    }
 }

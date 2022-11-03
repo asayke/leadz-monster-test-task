@@ -17,7 +17,6 @@ public class BallBorderCollision : MonoBehaviour
             .Subscribe(
                 _ =>
                 {
-                    print("sds");
                     OnDied?.Invoke();
                     _disposable.Clear();
                 }).AddTo(_disposable);
