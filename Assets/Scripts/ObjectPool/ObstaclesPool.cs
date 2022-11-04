@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(ObstaclesSpawner))]
 public class ObstaclesPool : MonoBehaviour
 {
-    private Stack<GameObject> _pool = new Stack<GameObject>();
+    private readonly Stack<GameObject> _pool = new Stack<GameObject>();
 
     public void PushToPool(GameObject obstacle)
     {

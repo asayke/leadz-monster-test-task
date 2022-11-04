@@ -13,7 +13,7 @@ public class UpButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Disable() => _disposable.Clear();
 
-    private void Awake() => _ballMover = FindObjectOfType<BallMover>();
+    private void Start() => _ballMover = FindObjectOfType<BallMover>();
 
     public void OnPointerDown(PointerEventData eventData) => Enable();
 
