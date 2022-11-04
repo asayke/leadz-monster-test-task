@@ -15,6 +15,7 @@ public class ObstacleMover : MonoBehaviour
     private void Awake()
     {
         _walls = FindObjectOfType<WallsMover>();
+        _speed = _walls.Speed;
         _rigibody = GetComponent<Rigidbody2D>();
         _walls.OnSpeedChanged += Move;
     }

@@ -11,6 +11,8 @@ public class WallsMover : MonoBehaviour, IMovable
     private float _speed;
     public event Action<float> OnSpeedChanged;
 
+    public float Speed => _speed;
+
     public void Move() => _wallsRigidbody2D.velocity = Vector2.left * _speed;
 
     private IEnumerator Moving()
